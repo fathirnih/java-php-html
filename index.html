@@ -3,37 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Artikel</title>
+    <title>Landing Page - My Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- Header -->
     <header>
-        <div class="logo">Logo</div>
+        <div class="logo">MyWebsite</div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Article</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#article">Article</a></li>
+                <li><a href="#about-us">About Us</a></li>
             </ul>
         </nav>
-              <button id="dark-mode-toggle">🌙</button> <!-- Tombol Dark Mode -->
+        <button id="dark-mode-toggle">🌙</button>
     </header>
 
     <!-- Main Content -->
     <main>
-        <section class="latest-articles">
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <h1>Selamat Datang di Website Kami</h1>
+            <p>Temukan berbagai artikel menarik dan informasi bermanfaat di sini.</p>
+            <button class="cta-btn">Jelajahi Sekarang</button>
+        </section>
+
+        <!-- Article Section -->
+        <section id="article" class="latest-articles">
             <h2>Latest Articles</h2>
             <div id="articles-container" class="articles-container">
                 <!-- Artikel akan dimuat di sini oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about-us" class="about-section">
+            <h2>Tentang Kami</h2>
+            <p>
+                Kami adalah tim pengembang muda yang bersemangat untuk menghadirkan informasi menarik, 
+                edukatif, dan inspiratif untuk semua pembaca.
+            </p>
+
+            <div class="team">
+                <div class="team-member">
+                    <img src="assets/team1.jpg" alt="Fathir">
+                    <h3>Fathir</h3>
+                    <p>Founder & Backend Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/team2.jpg" alt="Rafi">
+                    <h3>Rafi</h3>
+                    <p>Frontend Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/team3.jpg" alt="Sinta">
+                    <h3>Sinta</h3>
+                    <p>UI/UX Designer</p>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>FOOTER</p>
+        <p>&copy; 2025 My Website. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
