@@ -1,5 +1,5 @@
 // Ambil data artikel dari file JSON
-fetch('data.json')
+fetch('data/data.json')
     .then(response => response.json())
     .then(data => {
         // Menampilkan artikel di halaman
