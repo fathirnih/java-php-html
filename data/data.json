@@ -1,25 +1,26 @@
 [
     {
-        "title": "Kambing guling",
+        "title": "Mengapa Dark Mode Semakin Populer di Desain Web",
         "author": "author",
         "date": "01 Oktober 2025",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.",
+        "content": "Dark mode kini menjadi tren besar di dunia desain web. Selain membuat tampilan lebih elegan, mode gelap juga mengurangi kelelahan mata saat menatap layar dalam waktu lama. Banyak situs dan aplikasi populer seperti YouTube, Twitter, dan GitHub telah mengadopsi fitur ini. Dengan implementasi CSS sederhana, pengembang bisa menambahkan mode gelap yang dapat diaktifkan sesuai preferensi pengguna.",       
         "link": "#",
-        "image": "images/artikel1.jpeg"
+        "image": "images/foto1.jpg"
     },
     {
-        "title": "Judul Artikel 2",
-        "date": "01 Oktober 2025",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.",
+        "title": "Mengenal HTML: Pondasi dari Setiap Website",
+        "author": "author",
+        "date": "10 Oktober 2025",
+        "content": "HTML (HyperText Markup Language) adalah bahasa utama untuk membuat struktur dasar halaman web. Dengan HTML, kita bisa menentukan elemen-elemen seperti teks, gambar, tautan, dan tabel. Meskipun terlihat sederhana, HTML menjadi fondasi utama dari semua website modern. Dengan memahami HTML, kamu bisa lebih mudah mempelajari CSS dan JavaScript untuk mempercantik serta memperkaya tampilan situs web.",
         "link": "#",
-        "image": "images/artikel2.jpg"  
+        "image": "images/foto2.png"  
     },
     {
-        "title": "Judul Artikel 3",
+        "title": "JavaScript: Bahasa yang Menghidupkan Web",
         "author": "author",
         "date": "01 Oktober 2025",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.",
+        "content": "JavaScript adalah bahasa pemrograman yang menjadikan website interaktif dan dinamis. Mulai dari animasi, form validasi, hingga aplikasi web kompleks — semuanya dapat dibuat menggunakan JavaScript. Kini dengan munculnya framework seperti React, Vue, dan Angular, JavaScript menjadi semakin kuat dan fleksibel. Belajar JavaScript adalah langkah penting bagi siapa pun yang ingin menjadi web developer handal.",        
         "link": "#",
-        "image": "images/artikel3.jpg"
+        "image": "images/foto3.jpg"
     }
 ]
