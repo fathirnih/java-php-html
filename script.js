@@ -10,7 +10,7 @@ fetch('data.json')
             articleElement.classList.add('article');
 
             articleElement.innerHTML = `
-                <img src="${article.image}" alt="${article.title}">  <!-- Menambahkan gambar -->
+                <img src="${article.image}" alt="${article.title}">  <!-- Menggunakan gambar dari folder images -->
                 <h3>${article.title}</h3>
                 <p class="author">author | ${article.date}</p>
                 <p>${article.content}</p>
