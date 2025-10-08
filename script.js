@@ -33,3 +33,28 @@ fetch('data/data.json')
     .catch(error => {
         console.error('Error loading JSON data:', error);
     });
+
+
+// Ambil elemen tombol Dark Mode
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+// Cek jika dark mode sudah disimpan di localStorage
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.textContent = '🌞'; // Ganti ikon menjadi 🌞 saat dark mode aktif
+}
+
+// Menambahkan event listener untuk tombol
+darkModeToggle.addEventListener('click', () => {
+    // Toggle class dark-mode pada body
+    document.body.classList.toggle('dark-mode');
+    
+    // Cek apakah dark mode aktif dan simpan statusnya di localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkModeToggle.textContent = '🌞'; // Ganti ikon menjadi 🌞 saat dark mode aktif
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkModeToggle.textContent = '🌙'; // Ganti ikon menjadi 🌙 saat light mode aktif
+    }
+});
