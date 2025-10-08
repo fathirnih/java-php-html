@@ -1,5 +1,5 @@
 // Ambil data artikel dari file JSON
-fetch('data/data.json')
+fetch('data.json')
     .then(response => response.json())
     .then(data => {
         // Menampilkan artikel di halaman
@@ -10,6 +10,7 @@ fetch('data/data.json')
             articleElement.classList.add('article');
 
             articleElement.innerHTML = `
+                <img src="${article.image}" alt="${article.title}">  <!-- Menambahkan gambar -->
                 <h3>${article.title}</h3>
                 <p class="author">author | ${article.date}</p>
                 <p>${article.content}</p>
