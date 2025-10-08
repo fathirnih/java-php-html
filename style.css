@@ -1,346 +1,559 @@
+/* ===== ROOT VARIABLES UNTUK KEMUDAHAN KUSTOMISASI ===== */
+:root {
+    --primary-color: #1e3a8a; /* Biru navy mewah */
+    --accent-color: #d4af37; /* Emas luxurious */
+    --bg-light: #f8fafc; /* Abu-abu sangat terang */
+    --bg-dark: #0f172a; /* Hitam pekat modern */
+    --text-light: #1e293b; /* Abu-abu gelap */
+    --text-dark: #f1f5f9; /* Putih keabu-abuan */
+    --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 10px 30px rgba(255, 255, 255, 0.05);
+    --border-radius: 16px; /* Radius modern yang lembut */
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth easing */
+}
+
+/* ===== RESET DAN BASE ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    transition: background-color 0.3s, color 0.3s;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: var(--transition);
+}
+
+/* Dark Mode Overrides (Kompatibel dengan class body.dark-mode) */
 body.dark-mode {
-    background-color: #121212;
-    color: white;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
 }
 
 /* ===== HEADER ===== */
 header {
-    background-color: #f4f4f4;
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.95); /* Glassmorphism ringan */
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode header {
-    background-color: #333;
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-dark);
 }
 
 header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-header nav {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    margin-right: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 header nav ul {
     display: flex;
-    gap: 20px;
-    list-style-type: none;
+    gap: 2rem;
+    list-style: none;
     align-items: center;
 }
 
 header nav ul li a {
     text-decoration: none;
-    color: #d32c2c;
-    font-size: 16px;
-    transition: color 0.3s;
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: var(--transition);
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
 }
 
 body.dark-mode header nav ul li a {
-    color: #bbb;
+    color: var(--text-dark);
 }
 
 body.dark-mode header nav ul li a:hover {
-    color: #007bff;
+    color: var(--accent-color);
 }
 
-header button {
+#dark-mode-toggle {
     background: none;
     border: none;
-    color: #333;
-    font-size: 24px;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: color 0.3s;
+    color: var(--text-light);
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 50%;
 }
 
-body.dark-mode header button {
-    color: white;
+#dark-mode-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--accent-color);
+}
+
+body.dark-mode #dark-mode-toggle {
+    color: var(--text-dark);
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
 }
 
 /* ===== MAIN CONTENT ===== */
 main {
-    padding-top: 100px; /* Supaya tidak tertutup header */
+    padding-top: 5rem; /* Adjust untuk header fixed */
 }
 
-/* ===== HOME SECTION ===== */
+/* ===== HERO SECTION ===== */
 .hero {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #d32c2c, #f06292);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #3b82f6 50%, var(--accent-color) 100%);
     color: white;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); /* Efek grain subtle untuk mewah */
+    pointer-events: none;
 }
 
 .hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .hero p {
-    font-size: 1.2em;
+    font-size: 1.25rem;
     max-width: 600px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.2s forwards;
 }
 
 .cta-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: white;
-    color: #d32c2c;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
     border: none;
-    border-radius: 8px;
-    font-weight: bold;
+    border-radius: var(--border-radius);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: 0.3s;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.4s forwards;
 }
 
 .cta-btn:hover {
-    background: #f4f4f4;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: white;
+}
+
+/* Animasi fade-in untuk hero */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ===== ARTICLE SECTION ===== */
 .latest-articles {
-    padding: 80px 40px;
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .latest-articles h2 {
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 24px;
-    color: #303030;
+    margin-bottom: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    color: var(--text-light);
+    position: relative;
 }
+
+.latest-articles h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
 body.dark-mode .latest-articles h2 {
-    color: #fff;
+    color: var(--text-dark);
 }
 
 .articles-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .article {
-    background-color: #fff;
-    padding: 20px;
-    width: 30%;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    overflow: hidden;
+    position: relative;
+}
+
+.article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transition: var(--transition);
 }
 
 .article:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.article:hover::before {
+    transform: scaleX(1);
 }
 
 body.dark-mode .article {
-    background-color: #1e1e1e;
-    color: white;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+    background: #1e293b;
+    color: var(--text-dark);
+    box-shadow: var(--shadow-dark);
 }
 
 .article img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: calc(var(--border-radius) - 4px);
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.article:hover img {
+    transform: scale(1.05);
 }
 
 .article h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
 }
 
 body.dark-mode .article h3 {
-    color: #fff;
+    color: var(--text-dark);
 }
 
 .article p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 20px;
+    color: #64748b;
+    font-size: 0.95rem;
 }
 
 body.dark-mode .article p {
-    color: #ddd;
+    color: #94a3b8;
+}
+
+/* Tambahan untuk author di article (dari script.js) */
+.article .author {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+body.dark-mode .article .author {
+    color: #94a3b8;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.read-more:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+body.dark-mode .read-more {
+    color: var(--accent-color);
+}
+
+body.dark-mode .read-more:hover {
+    color: var(--primary-color);
 }
 
 /* ===== ABOUT SECTION ===== */
 .about-section {
-    padding: 100px 40px;
+    padding: 5rem 2rem;
     text-align: center;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
 }
 
 body.dark-mode .about-section {
-    background-color: #1e1e1e;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #334155 100%);
 }
 
 .about-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+body.dark-mode .about-section h2 {
+    color: var(--text-dark);
 }
 
 .about-section p {
     max-width: 700px;
-    margin: 0 auto 50px;
-    font-size: 16px;
-    line-height: 1.6;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #475569;
 }
 
+body.dark-mode .about-section p {
+    color: #94a3b8;
+}
+
+/* Team section (jika ada, atau bisa ditambahkan di HTML) */
 .team {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .team-member {
     background: white;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 20px;
-    transition: 0.3s;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    text-align: center;
 }
 
 .team-member:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 body.dark-mode .team-member {
-    background: #2a2a2a;
-    color: white;
+    background: #1e293b;
+    color: var(--text-dark);
+    box-shadow: var(--shadow-dark);
 }
 
 .team-member img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    border-radius: calc(var(--border-radius) - 4px);
+    margin-bottom: 1rem;
 }
 
 .team-member h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+body.dark-mode .team-member h3 {
+    color: var(--text-dark);
 }
 
 /* ===== FOOTER ===== */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
-    font-size: 16px;
-    color: #333;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--text-light) 0%, #334155 100%);
+    color: white;
+    box-shadow: var(--shadow-light);
+    margin-top: auto;
 }
 
 body.dark-mode footer {
-    background-color: #333;
-    color: white;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1e293b 100%);
+    box-shadow: var(--shadow-dark);
 }
 
-/* ===== DARK MODE BUTTON ===== */
-#dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
-    transition: color 0.3s;
-}
-
-body.dark-mode #dark-mode-toggle {
-    color: white;
-}
-
-#dark-mode-toggle:hover {
-    color: #007bff;
-}
-
-/* ===== ANIMASI SMOOTH SCROLL ===== */
-html {
-    scroll-behavior: smooth;
-}
-
-body, .article, footer, header, #dark-mode-toggle {
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-}
-
-
-/* ====== MODAL STYLING ====== */
+/* ===== MODAL STYLING (Ditingkatkan dengan Glassmorphism) ===== */
 .modal {
-  display: none; /* Sembunyikan awalnya */
-  position: fixed;
-  z-index: 100;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.6);
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 5rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
 }
 
 .modal-content {
-  background-color: #fff;
-  margin: auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 60%;
-  max-width: 700px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background: rgba(255, 255, 255, 0.95);
+    margin: auto;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: modalSlideIn 0.3s ease;
 }
 
 body.dark-mode .modal-content {
-  background-color: #1e1e1e;
-  color: white;
+    background: rgba(30, 41, 59, 0.95);
+    color: var(--text-dark);
+    border-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
 }
 
 .modal-content img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
+    width: 100%;
+    border-radius: calc(var(--border-radius) - 4px);
+    margin-bottom: 1rem;
 }
 
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+    color: #94a3b8;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .close:hover {
-  color: #d32c2c;
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    header nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 0 1rem;
+        height: 80vh;
+    }
+
+    .latest-articles,
+    .about-section {
+        padding: 3rem 1rem;
+    }
+
+    .articles-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
 }
