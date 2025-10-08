@@ -4,20 +4,23 @@
         "author": "author",
         "date": "01 Oktober 2025",
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.",
-        "link": "#"
+        "link": "#",
+        "image": "https://via.placeholder.com/300x200?text=Artikel+1"
     },
     {
         "title": "Judul Artikel 2",
         "author": "author",
         "date": "01 Oktober 2025",
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.",
-        "link": "#"
+        "link": "#",
+        "image": "https://via.placeholder.com/300x200?text=Artikel+2"
     },
     {
         "title": "Judul Artikel 3",
         "author": "author",
         "date": "01 Oktober 2025",
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut ullamcorper nulla.",
-        "link": "#"
+        "link": "#",
+        "image": "https://via.placeholder.com/300x200?text=Artikel+3"
     }
 ]
